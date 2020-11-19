@@ -1,0 +1,18 @@
+
+
+blade syntax  {{}} ==> will print the value of the variable only 
+if this value evaluate to string
+
+
+
+#check all the available artisan commands
+    php artisan 
+
+# get the help of such artisan command
+    php artisan commandName --help
+
+
+# to create a controller 
+# use (php artisan make:controller ControllerName)
+# put the controller in another dir inside Controllers dir
+# use (php artisan make:controller /dirname/ControllerName)

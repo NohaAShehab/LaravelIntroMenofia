@@ -1,0 +1,33 @@
+take address (Routes)
+
+Routes (/iti, itiController)
+
+iticontroller (prepare required data)
+
+to get data -> contact the model  
+
+Model (php file, represent items in the database)
+
+Model --> Eleqount ORM (Connection to database )-> operations on the database
+
+Model, return data to the controller 
+
+Controller binding the data to the view (blade.php)
+
+blade template engine (HTML Structure, js, css, bootstrap)
+
+view Ready->> will sent as reponse to the request
+
+
+################################
+ php artisan make:controller ControllerName  --invokable (-i)
+ Create controller contains function __invoke 
+ --> will be called when call the controller without specifying function
+
+
+ ################# Connection to database
+
+    check database port 
+    MariaDB [(none)]> SHOW GLOBAL VARIABLES LIKE 'PORT';
+
+    MariaDB [(none)]> SHOW GLOBAL VARIABLES LIKE 'PORT';
