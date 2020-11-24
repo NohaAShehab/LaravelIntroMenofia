@@ -41,22 +41,22 @@ Route::get('/studentslist',function(){
 });
 
 Route::get("/islam",function($name=20){
-    
+
     return "Welcome ".$name;
 });
 # get information from the url
 // Route::get("/iti/{name}/test",function($name){
-    
+
 //     return "Welcome ".$name;
 // });
 
 // Route::get("/iti/{name}/{age}",function($name,$age){
-    
+
 //     return "Welcome ".$name. " ". $age;
 // });
 
 // Route::get("/iti/{test}",function($test){
-    
+
 //     return "Welcome jkhkh ".$test;
 // });
 
@@ -88,7 +88,7 @@ Route::get('/info',function(){
 # display info about the variables
     dd($nn);
     // return "These are my info";
-   
+
     // return $_REQUEST;
     return $disInfo;
 });
@@ -110,7 +110,7 @@ Route::get("/varinfo",function(){
         return view("itiwebsite.home");
     });
 
-    #tracks page 
+    #tracks page
     Route::get("/iti/tracks",function(){
         return view("itiwebsite.tracks");
     });
@@ -136,7 +136,7 @@ Route::get("/varinfo",function(){
     //     }
     // });
 
- 
+
     #before laravel 8
                 #add
     Route::get('iti/trackinfo','App\Http\Controllers\ItiController@trackInfo');
@@ -144,41 +144,51 @@ Route::get("/varinfo",function(){
     use App\Http\Controllers\iti\AbcController;
     Route::get('omar',[AbcController::class, "hello"]);
 
+use App\Http\Controllers\SingleFuncController;
+Route::get("single",SingleFuncController::class);
+Route::get("single2",[SingleFuncController::class,"testfunction"]);
 
-  
+Route::get("single3",[SingleFuncController::class,"testfunction"]);
 
-    use App\Http\Controllers\ItiController as ABC;
+
+
+
+
+
+
+
+
+
+use App\Http\Controllers\ItiController as ABC;
     Route::get("iti/students",[ABC::class,'displayStudents']);
-    
+
+    Route::get("students/create",[ABC::class,'createStudent'])
+        ->name("student.create"); // return the view
+
+    #make new route redirect create student.
+
+    Route::post("students/store",[ABC::class,'storeStudent'])->name("students.insert");
+
+
     // Route::get("iti/students",ABC::class); #invokable controller
 
 
 
-    use App\Http\Controllers\SingleFuncController;
-    Route::get("single",SingleFuncController::class);
-    Route::get("single2",[SingleFuncController::class,"testfunction"]);
 
-    Route::get("single3",[SingleFuncController::class,"testfunction"]);
-
-
-
-
-
-
-    #make controller do single function 
+    #make controller do single function
     # php artisan make:controller SingleFunController --invokable
 
-    # writing controller 
+    # writing controller
 
 
-    #dealing with controllers 
+    #dealing with controllers
     # use App\Http\Controllers\UserController;
     # Route::get('hh', [NewController::class, 'test']);
-    # 
+    #
 
 
     #If you would like to define a controller that
-    # only handles a single action, 
+    # only handles a single action,
     #you may place a single __invoke method on the controller:
     // Route::get('', ControllerName::class);
     #php artisan make:controller ShowProfile --invokable

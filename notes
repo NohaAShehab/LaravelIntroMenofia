@@ -1,0 +1,47 @@
+1- get data from database
+I need connection
+
+2- make model ((all the operations related to the database using model))
+Model--> represent one item in the table (students)--> Model (student)
+php artisan make:model  Student
+
+3- database migration files to create the table inside the database
+migration --> related to the database structure.
+
+migratation file to create students table
+php artisan make:migration create_students_table
+
+php artisan make:migration comments
+
+$table->string("Col_name")->nullable;
+
+
+create model that can deals with the table
+
+
+
+Documentation for model:
+https://laravel.com/docs/8.x/eloquent#defining-models
+
+Documentation for migration columns datatypes
+https://laravel.com/docs/8.x/migrations#columns
+
+Documentation for migration (generating different migrations)
+https://laravel.com/docs/8.x/migrations#generating-migrations
+
+Modifying Columns Attributes
+https://laravel.com/docs/8.x/migrations#updating-column-attributes
+
+Documentation for query builder
+https://laravel.com/docs/8.x/queries
+
+
+
+
+
+
+
+
+
+
+
