@@ -5,7 +5,7 @@
     this is inner section
 
 
-        <table>
+        <table class="table">
           <tr>
               <th>
                   Name
@@ -15,6 +15,15 @@
               </th>
               <th>
                   Track
+              </th>
+              <th>
+                  Show
+              </th>
+              <th>
+                  Edit
+              </th>
+              <th>
+                  Delete
               </th>
           </tr>
         @foreach($students as $student)
@@ -28,6 +37,23 @@
                 </td>
                 <td>
                     {{$student["track"]}}
+                </td>
+                <td>
+                    <a href="{{route("student.show",$student)}}">
+                        Show Student {{$student["id"]}}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{route("student.edit",$student)}}">
+                        Edit Student {{$student["id"]}}
+                    </a>
+                </td>
+                <td>
+                    <form method="post"  action="{{route("student.delete",$student)}}">
+                        @csrf
+                        @method("delete")
+                        <input type="submit"  value="Delete"class="btn btn-danger" >
+                    </form>
                 </td>
             </tr>
 

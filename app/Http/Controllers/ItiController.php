@@ -67,7 +67,7 @@ class ItiController extends Controller
     }
 
     function storeStudent(){
-        $data=request();
+        $data=request();  # $request
 
         $name=request("name");
         $email=request("email");

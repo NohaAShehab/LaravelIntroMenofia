@@ -1,0 +1,30 @@
+
+
+# create model
+    php artisan make:model Post
+
+#create migration file
+    php artisan make:migration create_posts_table
+
+
+#instead
+    php artisan make:model Post -m  # create migration file for the model
+
+ #controller
+      php artisan make:controller PostController  -m Model_name
+
+ #invokable controller (__invoke)
+
+ #Resources controller --->
+    php artisan make:controller PostsController -r -M Model_name
+    # -r --> add controller resources to the controller
+    # -M Model_name, Include model in the controller
+
+
+ ################################
+ php artisan make:model Model_name -m -c
+
+
+ #####
+ php artisan make:model Model --all  (model,controller, migration, factory)
+

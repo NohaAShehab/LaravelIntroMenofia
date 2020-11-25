@@ -36,6 +36,23 @@ Documentation for query builder
 https://laravel.com/docs/8.x/queries
 
 
+###########################
+Methods
+
+    Get --> retrieve
+    Post-> submit data (for the first time , insert)
+    update --> Put === Patch
+
+    #post ---> id of the item ---> get student by id, delete the object
+
+
+    #delete
+
+  #####
+  abort(404);
+
+
+
 
 
 
